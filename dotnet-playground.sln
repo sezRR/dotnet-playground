@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_07_programmatic_object_generation_methods", "01_07_programmatic_object_generation_methods\01_07_programmatic_object_generation_methods.csproj", "{766CB41E-A22C-43A4-8EAB-D93F52BC5875}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_07_pre_dynamic_keyword", "01_07_pre_dynamic_keyword\01_07_pre_dynamic_keyword.csproj", "{802976F9-E129-4C3B-9D64-B33F5D31193D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{766CB41E-A22C-43A4-8EAB-D93F52BC5875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766CB41E-A22C-43A4-8EAB-D93F52BC5875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766CB41E-A22C-43A4-8EAB-D93F52BC5875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766CB41E-A22C-43A4-8EAB-D93F52BC5875}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802976F9-E129-4C3B-9D64-B33F5D31193D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802976F9-E129-4C3B-9D64-B33F5D31193D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802976F9-E129-4C3B-9D64-B33F5D31193D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802976F9-E129-4C3B-9D64-B33F5D31193D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
