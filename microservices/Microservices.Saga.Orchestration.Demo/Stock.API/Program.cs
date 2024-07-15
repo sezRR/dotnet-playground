@@ -1,0 +1,66 @@
+using MassTransit;
+using MongoDB.Driver;
+using Shared.Settings;
+using Stock.API.Consumers;
+using Stock.API.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddMassTransit(configurator =>
+{
+    configurator.AddConsumer<OrderCreatedEventConsumer>();
+    configurator.AddConsumer<StockRollbackMessageConsumer>();
+
+    configurator.UsingRabbitMq((context, _configure) =>
+    {
+        _configure.Host(builder.Configuration["RabbitMQ"]);
+
+        _configure.ReceiveEndpoint(RabbitMQSettings.Stock_OrderCreatedEventQueue, e => e.ConfigureConsumer<OrderCreatedEventConsumer>(context));
+        _configure.ReceiveEndpoint(RabbitMQSettings.Stock_RollbackMessageQueue, e => e.ConfigureConsumer<StockRollbackMessageConsumer>(context));
+    });
+});
+
+builder.Services.AddSingleton<MongoDbService>();
+
+var app = builder.Build();
+
+using var scope = builder.Services.BuildServiceProvider().CreateScope();
+
+var mongoDbService = scope.ServiceProvider.GetRequiredService<MongoDbService>();
+var collection = mongoDbService.GetCollection<Stock.API.Models.Stock>();
+
+if (!await (await collection.FindAsync(x => true)).AnyAsync())
+{
+    collection.InsertOne(new()
+    {
+        ProductId = 1,
+        Count = 200
+    });
+
+    collection.InsertOne(new()
+    {
+        ProductId = 2,
+        Count = 300
+    });
+
+    collection.InsertOne(new()
+    {
+        ProductId = 3,
+        Count = 50
+    });
+
+    collection.InsertOne(new()
+    {
+        ProductId = 4,
+        Count = 10
+    });
+
+    collection.InsertOne(new()
+    {
+        ProductId = 5,
+        Count = 60
+    });
+}
+
+
+app.Run();
