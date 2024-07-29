@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_08_covariance_and_contra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00_00_others", "00_00_others\00_00_others.csproj", "{B475DFDA-CAF0-4450-8789-649CC81D0C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_10_delegates", "01_10_delegates\01_10_delegates.csproj", "{E223E0BE-539E-446A-9F4F-A4CE58C5353C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_10_delegates", "01_10_delegates\01_10_delegates.csproj", "{E223E0BE-539E-446A-9F4F-A4CE58C5353C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_11_events", "01_11_events\01_11_events.csproj", "{67CC4E9F-0E90-4055-93C2-0AAC83962363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_11_events", "01_11_events\01_11_events.csproj", "{67CC4E9F-0E90-4055-93C2-0AAC83962363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_11_02_events_sample_scenario", "01_11_02_events_sample_scenario\01_11_02_events_sample_scenario.csproj", "{B239C4A1-D5BC-4C10-B214-5E1260DB4E39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_11_02_events_sample_scenario", "01_11_02_events_sample_scenario\01_11_02_events_sample_scenario.csproj", "{B239C4A1-D5BC-4C10-B214-5E1260DB4E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_12_built_in_delegate_types", "01_12_built_in_delegate_types\01_12_built_in_delegate_types.csproj", "{8CC244D3-BCD1-4D2D-9A87-BC4E2D0AA61F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01_12_built_in_delegate_types", "01_12_built_in_delegate_types\01_12_built_in_delegate_types.csproj", "{8CC244D3-BCD1-4D2D-9A87-BC4E2D0AA61F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_13_anonymous_structures", "01_13_anonymous_structures\01_13_anonymous_structures.csproj", "{724C827B-6A59-45D4-BCC5-AACEEBD7B3EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,8 +59,15 @@ Global
 		{8CC244D3-BCD1-4D2D-9A87-BC4E2D0AA61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CC244D3-BCD1-4D2D-9A87-BC4E2D0AA61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CC244D3-BCD1-4D2D-9A87-BC4E2D0AA61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724C827B-6A59-45D4-BCC5-AACEEBD7B3EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724C827B-6A59-45D4-BCC5-AACEEBD7B3EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724C827B-6A59-45D4-BCC5-AACEEBD7B3EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724C827B-6A59-45D4-BCC5-AACEEBD7B3EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6D3ECB0-E56C-41EF-9F86-80B7C4D7C757}
 	EndGlobalSection
 EndGlobal
