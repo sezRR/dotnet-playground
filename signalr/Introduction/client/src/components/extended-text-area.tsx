@@ -1,21 +1,20 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import ButtonWithIcon from "./button-with-icon";
 import { Send } from "lucide-react";
+import { sendMessage } from "@/lib/services/signalr-service";
+import MessageSchema from "@/lib/interfaces/message";
 
 const FormSchema = z.object({
   message: z
@@ -33,7 +32,7 @@ export function TextareaForm() {
     resolver: zodResolver(FormSchema),
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
       title: "You submitted the following values:",
       description: (
@@ -41,6 +40,17 @@ export function TextareaForm() {
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
+    });
+
+    const message: MessageSchema = {
+      message: JSON.stringify(data, null, 2),
+    };
+
+    await sendMessage(message);
+
+    toast({
+      title: "Message Sent",
+      description: "Your message sent successfully to SignalR websocket!",
     });
   }
 
