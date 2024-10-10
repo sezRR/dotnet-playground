@@ -1,5 +1,4 @@
 ﻿using BuilderPattern.TaskBuilder.Common;
-using BuilderPattern.TaskBuilder.Common.Enums;
 using BuilderPattern.TaskBuilder.Common.Interfaces;
 using BuilderPattern.TaskBuilder.Common.Interfaces.Builders;
 using TaskStatus = BuilderPattern.TaskBuilder.Common.Enums.TaskStatus;
@@ -33,19 +32,19 @@ public class DailyTaskBuilder : ITaskBuilder<DailyTask>
         return _dailyTask;
     }
 
-    public ICommonDetailsBuilder<ITaskBuilder<DailyTask>, DailyTask> SetDescription(string description)
+    public ITaskBuilder<DailyTask> SetDescription(string description)
     {
         _dailyTask.Description = description;
         return this;
     }
 
-    public ICommonDetailsBuilder<ITaskBuilder<DailyTask>, DailyTask> SetDetails(string details)
+    public ITaskBuilder<DailyTask> SetDetails(string details)
     {
         _dailyTask.Details = details;
         return this;
     }
 
-    public ICommonDetailsBuilder<ITaskBuilder<DailyTask>, DailyTask> SetName(string name)
+    public ITaskBuilder<DailyTask> SetName(string name)
     {
         _dailyTask.Name = name;
         return this;

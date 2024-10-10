@@ -4,7 +4,7 @@ public interface ICommonDetailsBuilder<TBuilder, TOutput>
     where TBuilder : IBuilder<TOutput>
     where TOutput: class
 {
-    ICommonDetailsBuilder<TBuilder, TOutput> SetName(string name);
-    ICommonDetailsBuilder<TBuilder, TOutput> SetDescription(string description);
-    ICommonDetailsBuilder<TBuilder, TOutput> SetDetails(string details);
+    TBuilder SetName(string name);
+    TBuilder SetDescription(string description);
+    TBuilder SetDetails(string details);
 }
